@@ -26,7 +26,7 @@ zabbix_repo_yum:
     state: present
 
 # Zabbix API stuff
-zabbix_url: "http://zabbix.example.com"
+zabbix_url: "http://103.127.28.114/zabbix"
 zabbix_api_user: Admin
 zabbix_api_pass: zabbix
 zabbix_api_create_hostgroup: False
