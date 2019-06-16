@@ -55,15 +55,15 @@
   when:
     - ansible_all_ipv4_addresses is defined
 
-- name: "Set first public ip address for zabbix_agent_ip"
-  set_fact:
-    zabbix_agent_ip: "{{ ansible_all_ipv4_addresses | ipaddr('public') | first }}"
-    zabbix_agent_server: "{{ zabbix_agent_server_public_ip }}"
-    zabbix_agent_serveractive: "{{ zabbix_agent_serveractive_public_ip }}"
-  when:
-    - zabbix_agent_ip is not defined
-    - total_private_ip_addresses is defined
-    - total_private_ip_addresses == '0'
+#- name: "Set first public ip address for zabbix_agent_ip"
+#  set_fact:
+#    zabbix_agent_ip: "{{ ansible_all_ipv4_addresses | ipaddr('public') | first }}"
+#    zabbix_agent_server: "{{ zabbix_agent_server_public_ip }}"
+#    zabbix_agent_serveractive: "{{ zabbix_agent_serveractive_public_ip }}"
+#  when:
+#    - zabbix_agent_ip is not defined
+#    - total_private_ip_addresses is defined
+#    - total_private_ip_addresses == '0'
 
 - name: "Set first private ip address for zabbix_agent_ip"
   set_fact:
