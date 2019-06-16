@@ -3,20 +3,20 @@
   hosts: all
   roles:
     - zabbix-agent
-  tasks:
-    - name: remove host from the discovered hosts group
-      zabbix_host:
-        server_url: "{{ zabbix_url }}"
-        login_user: "{{ zabbix_user }}"
-        login_password: "{{ zabbix_pass }}"
-        host_name: "{{ inventory_hostname }}"
-        visible_name: "{{ ansible_hostname }}"
-        description: Added by Ansible
-        host_groups: "{{ host_groups }}"
-        status: enabled
-        state: present
-      delegate_to: localhost
-      when: "'Discovered hosts' in group_names and 'localhost' not in ansible_hostname"
+  #tasks:
+  #  - name: remove host from the discovered hosts group
+  #    zabbix_host:
+  #      server_url: "{{ zabbix_url }}"
+  #      login_user: "{{ zabbix_user }}"
+  #      login_password: "{{ zabbix_pass }}"
+  #      host_name: "{{ inventory_hostname }}"
+  #      visible_name: "{{ ansible_hostname }}"
+  #      description: Added by Ansible
+  #      host_groups: "{{ host_groups }}"
+  #      status: enabled
+  #      state: present
+  #    delegate_to: localhost
+  #    when: "'Discovered hosts' in group_names and 'localhost' not in ansible_hostname"
 
 #    - name: E-Mail out new discovered box has localhost set and needs to be resolved  
 #      mail:
